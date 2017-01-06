@@ -111,7 +111,10 @@ public class QsbContainerView extends FrameLayout {
             mWidgetInfo = getSearchWidgetProvider(activity);
             if (mWidgetInfo == null) {
                 // There is no search provider, just show the default widget.
-                return QsbWidgetHostView.getDefaultView(container);
+                // and hide it as no action can be performed without provider !
+                View noSearchWidget = QsbWidgetHostView.getDefaultView(container);
+                noSearchWidget.setVisibility(View.GONE);
+                return noSearchWidget;
             }
 
             AppWidgetManager widgetManager = AppWidgetManager.getInstance(activity);
