@@ -64,7 +64,7 @@ public class IconShapeOverride {
         }
         // Only supported when developer settings is enabled
         if (Settings.Global.getInt(context.getContentResolver(),
-                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 1) {
+                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 1) != 1) {
             return false;
         }
 
